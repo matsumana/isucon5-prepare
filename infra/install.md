@@ -38,3 +38,37 @@ end script
 
 exec $DAEMON
 ```
+
+```
+sudo vim /usr/local/nginx/conf/nginx.conf
+```
+
+```
+worker_processes  1;
+
+events {
+  worker_connections  10000;
+}
+
+http {
+  include     mime.types;
+  access_log  off;
+  sendfile    on;
+  tcp_nopush  on;
+  tcp_nodelay on;
+  etag        off;
+  upstream app {
+    server unix:/dev/shm/app.sock;
+  }
+
+  server {
+    location / {
+      proxy_pass http://app;
+    }
+    location ~ ^/(stylesheets|images)/ {
+      open_file_cache max=100;
+      root /home/isucon/webapp/public;
+    }
+  }
+}
+```
