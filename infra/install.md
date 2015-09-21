@@ -1,4 +1,4 @@
-```bash
+```
 sudo apt-get install zlib1g-dev libssl-dev libpcre3-dev
 mkdir -p $HOME/local/src
 cd $HOME/local/src
@@ -8,13 +8,11 @@ cd nginx-1.8.0
 ./configure --with-cc-opt="-Wno-deprecated-declarations"
 make
 sudo make install
-```
 
-```bash
 sudo vim /etc/init/nginx.conf
 ```
 
-```conf
+```
 # nginx
 
 description "nginx http daemon"
