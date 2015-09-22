@@ -1,4 +1,5 @@
 ```
+sudo mv -i /usr/my.cnf{,.org}
 sudo mv -i /etc/mysql{,.org}
 sudo mkdir /etc/mysql
 sudo vim /etc/mysql/my.cnf
