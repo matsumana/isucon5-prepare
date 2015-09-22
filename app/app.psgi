@@ -10,6 +10,9 @@ use Sereal;
 
 use Isucon::Web;
 
+# TODO 後で消す
+$ENV{LM_DEBUG} = 1;
+
 my $decoder = Sereal::Decoder->new();
 my $encoder = Sereal::Encoder->new();
 my $app = Isucon::Web->psgi($root_dir);

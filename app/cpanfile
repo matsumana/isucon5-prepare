@@ -8,3 +8,5 @@ requires "Sereal";
 
 requires "DBIx::Sunny";
 requires "DBD::mysql";
+
+requires "Log::Minimal";
