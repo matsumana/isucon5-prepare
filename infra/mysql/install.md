@@ -81,3 +81,45 @@ log-error=/var/lib/mysql/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 open-files-limit = 8192
 ```
+
+```
+mysql> SHOW VARIABLES LIKE 'slow_query_log';
++----------------+-------+
+| Variable_name  | Value |
++----------------+-------+
+| slow_query_log | ON    |
++----------------+-------+
+1 row in set (0.00 sec)
+
+mysql> SHOW VARIABLES LIKE 'long_query_time';
++-----------------+----------+
+| Variable_name   | Value    |
++-----------------+----------+
+| long_query_time | 0.000000 |
++-----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> SHOW VARIABLES LIKE 'log_queries_not_using_indexes';
++-------------------------------+-------+
+| Variable_name                 | Value |
++-------------------------------+-------+
+| log_queries_not_using_indexes | OFF   |
++-------------------------------+-------+
+1 row in set (0.00 sec)
+
+mysql> SHOW VARIABLES LIKE 'slow_query_log_file';
++---------------------+-------------------------------+
+| Variable_name       | Value                         |
++---------------------+-------------------------------+
+| slow_query_log_file | /var/lib/mysql/slow_query.log |
++---------------------+-------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SHOW VARIABLES LIKE 'performance_schema';
++--------------------+-------+
+| Variable_name      | Value |
++--------------------+-------+
+| performance_schema | OFF   |
++--------------------+-------+
+1 row in set (0.00 sec)
+```
