@@ -63,6 +63,9 @@ log_queries_not_using_indexes = 1
 long_query_time = 0
 slow_query_log_file = /var/lib/mysql/slow_query.log
 
+# performance schema
+performance_schema = 0
+
 [mysqldump]
 quick
 max_allowed_packet = 300M
