@@ -1,0 +1,12 @@
+<p>
+index.txです
+</p>
+
+<: $hoge :>
+<br>
+<: $fuga :>
+<br>
+<: $piyo :>
+<br>
+
+<img src="/images/logo.png"></img>
