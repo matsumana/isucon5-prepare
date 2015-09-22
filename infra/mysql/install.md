@@ -59,8 +59,8 @@ innodb_io_capacity = 200
 
 # slow query log
 slow_query_log = 1
-log_queries_not_using_indexes = 1
 long_query_time = 0
+#log_queries_not_using_indexes = 1
 slow_query_log_file = /var/lib/mysql/slow_query.log
 
 # performance schema
