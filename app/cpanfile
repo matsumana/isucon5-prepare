@@ -10,3 +10,4 @@ requires "DBIx::Sunny";
 requires "DBD::mysql";
 
 requires "Log::Minimal";
+requires "DBIx::QueryLog";
