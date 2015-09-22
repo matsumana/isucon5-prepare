@@ -81,7 +81,7 @@ http {
       open_file_cache max=100;
 
 # TODO アプリに合わせて修正
-      root /home/vagrant/perlapp-sandbox/public;
+      root /home/vagrant/isucon5-prepare/app/public;
     }
   }
 }
