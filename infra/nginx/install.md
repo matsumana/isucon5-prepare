@@ -17,6 +17,8 @@ sudo vim /usr/local/nginx/conf/nginx.conf
 ```
 worker_processes  1;
 
+worker_rlimit_nofile 40000;
+
 events {
   worker_connections  10000;
 }
