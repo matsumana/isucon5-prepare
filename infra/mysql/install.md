@@ -1,10 +1,3 @@
-# MySQLをOracle提供のリポジトリからインストールしたい時
-
-[Download MySQL APT Repository](https://dev.mysql.com/downloads/repo/apt/)  
-[A Quick Guide to Using the MySQL APT Repository](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
-
-&nbsp;
-
 ```
 sudo mv -i /usr/my.cnf{,.org}
 sudo mv -i /etc/mysql{,.org}
@@ -131,3 +124,8 @@ mysql> SHOW VARIABLES LIKE 'performance_schema';
 +--------------------+-------+
 1 row in set (0.00 sec)
 ```
+
+# MySQLをOracle提供のリポジトリからインストールしたい時
+
+[Download MySQL APT Repository](https://dev.mysql.com/downloads/repo/apt/)  
+[A Quick Guide to Using the MySQL APT Repository](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
