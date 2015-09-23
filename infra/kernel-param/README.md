@@ -7,6 +7,7 @@ net.core.netdev_max_backlog = 8192
 net.ipv4.tcp_tw_reuse = 1
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_fin_timeout = 10
+fs.file-max = 6815744
 EOF'
 ```
 
@@ -22,4 +23,5 @@ sudo sysctl -a | grep net.core.netdev_max_backlog
 sudo sysctl -a | grep net.ipv4.tcp_tw_reuse
 sudo sysctl -a | grep net.ipv4.tcp_tw_recycle
 sudo sysctl -a | grep net.ipv4.tcp_fin_timeout
+sudo sysctl -a | grep fs.file-max
 ```
