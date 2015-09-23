@@ -23,10 +23,3 @@ sudo sysctl -a | grep net.ipv4.tcp_tw_reuse
 sudo sysctl -a | grep net.ipv4.tcp_tw_recycle
 sudo sysctl -a | grep net.ipv4.tcp_fin_timeout
 ```
-
-```
-sudo sh -c 'cat << EOF >> /etc/security/limits.conf
-* hard nofile 65535
-* soft nofile 65535
-EOF'
-```
