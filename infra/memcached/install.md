@@ -29,3 +29,22 @@ end script
 respawn
 exec $MEMCACHED -d -p 11211 -U 0 -u nobody -m 256 -c 200000 -v -t 1 -C -B ascii
 ```
+
+# supervisorで起動する場合
+
+```
+sudo apt-get install supervisor
+sudo touch /etc/supervisor/conf.d/memcached.conf
+sudo vim /etc/supervisor/conf.d/memcached.conf
+```
+
+```
+[program:memcahed]
+directory=/
+command=/usr/local/memcached/bin/memcached -p 11211 -U 0 -u nobody -m 256 -c 200000 -v -t 1 -C -B ascii
+autostart = true
+```
+
+```
+sudo service supervisor restart
+```
