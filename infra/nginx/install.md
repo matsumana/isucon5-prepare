@@ -37,7 +37,7 @@ http {
   tcp_nodelay on;
   etag        off;
   upstream app {
-    server unix:/dev/shm/app.sock;
+    server unix:/tmp/app.sock;
   }
 
   server {
@@ -96,24 +96,38 @@ sudo vim /lib/systemd/system/nginx.service
 ```
 
 ```
+# Stop dance for nginx
+# =======================
+#
+# ExecStop sends SIGSTOP (graceful stop) to the nginx process.
+# If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control
+# and sends SIGTERM (fast shutdown) to the main process.
+# After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends
+# SIGKILL to all the remaining processes in the process group (KillMode=mixed).
+#
+# nginx signals reference doc:
+# http://nginx.org/en/docs/control.html
+#
 [Unit]
-Description=The NGINX HTTP and reverse proxy server
-After=syslog.target network.target remote-fs.target nss-lookup.target
+Description=A high performance web server and a reverse proxy server
+After=network.target
 
 [Service]
 Type=forking
-PIDFile=/run/nginx.pid
-ExecStartPre=/usr/local/nginx/sbin/nginx -t
-ExecStart=/usr/local/nginx/sbin/nginx
-ExecReload=/bin/kill -s HUP $MAINPID
-ExecStop=/bin/kill -s QUIT $MAINPID
-PrivateTmp=true
+PIDFile=/usr/local/nginx/logs/nginx.pid
+ExecStartPre=/usr/local/nginx/sbin/nginx -t -q -g 'daemon on; master_process on;'
+ExecStart=/usr/local/nginx/sbin/nginx -g 'daemon on; master_process on;'
+ExecReload=/usr/local/nginx/sbin/nginx -g 'daemon on; master_process on;' -s reload
+ExecStop=/bin/kill -s QUIT `cat /usr/local/nginx/logs/nginx.pid`
+TimeoutStopSec=5
+KillMode=mixed
 
 [Install]
 WantedBy=multi-user.target
 ```
 
 ```
+sudo systemctl daemon-reload
 sudo systemctl enable nginx
-sudo service nginx restart
+sudo systemctl restart nginx
 ```
