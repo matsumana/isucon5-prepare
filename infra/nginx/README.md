@@ -2,7 +2,7 @@
 sudo apt-get install zlib1g-dev libssl-dev libpcre3-dev
 mkdir -p $HOME/local/src
 cd $HOME/local/src
-curl -O http://nginx.org/download/nginx-1.8.0.tar.gz
+curl -L -O http://nginx.org/download/nginx-1.8.0.tar.gz
 tar xvf nginx-1.8.0.tar.gz
 cd nginx-1.8.0
 ./configure --with-cc-opt="-Wno-deprecated-declarations"

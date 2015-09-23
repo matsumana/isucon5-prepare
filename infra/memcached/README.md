@@ -2,7 +2,7 @@
 sudo apt-get install libevent-dev libperl-dev
 mkdir -p $HOME/local/src
 cd $HOME/local/src
-curl -O http://www.memcached.org/files/memcached-1.4.24.tar.gz
+curl -L -O http://www.memcached.org/files/memcached-1.4.24.tar.gz
 tar xvf memcached-1.4.24.tar.gz
 cd memcached-1.4.24
 ./configure --prefix=/usr/local/memcached
