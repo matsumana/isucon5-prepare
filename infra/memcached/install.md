@@ -10,6 +10,8 @@ make
 sudo make install
 ```
 
+# Upstartで起動する場合
+
 ```
 sudo vim /etc/init/memcached.conf
 ```
