@@ -6,7 +6,7 @@ EOF'
 ```
 
 supervisorのファイルディスクリプタ設定は別途必要  
-supervisord.confにminfds=65536を追加する
+supervisord.confにminfds=65535を追加する
 
 ```
 sudo vim /etc/supervisor/supervisord.conf
@@ -23,7 +23,7 @@ chmod=0700                       ; sockef file mode (default 0700)
 logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
 pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
 childlogdir=/var/log/supervisor            ; ('AUTO' child log dir, default $TEMP)
-minfds=65536
+minfds=65535
 
 ; the below section must remain in the config file for RPC
 ; (supervisorctl/web interface) to work, additional interfaces may be
