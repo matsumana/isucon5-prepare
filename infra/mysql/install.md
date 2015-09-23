@@ -1,7 +1,9 @@
 # MySQLをOracle提供のリポジトリからインストールしたい時
 
-[Download MySQL APT Repository](https://dev.mysql.com/downloads/repo/apt/)
+[Download MySQL APT Repository](https://dev.mysql.com/downloads/repo/apt/)  
 [A Quick Guide to Using the MySQL APT Repository](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
+
+&nbsp;
 
 ```
 sudo mv -i /usr/my.cnf{,.org}
