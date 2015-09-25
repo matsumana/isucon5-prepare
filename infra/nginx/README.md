@@ -58,6 +58,11 @@ http {
 }
 ```
 
+```
+sudo sysv-rc-conf nginx on
+sudo sysv-rc-conf --list nginx
+```
+
 # Upstartで起動する場合
 
 ```
